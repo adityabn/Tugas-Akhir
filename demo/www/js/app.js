@@ -104,15 +104,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.profile', {
-        url: '/profile',
+    .state('app.rundown', {
+        url: '/rundown',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profile.html',
+                templateUrl: 'templates/rundown.html',
                 controller: 'ProfileCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                template: '<button id="fab-rundowne" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     /*$timeout(function () {
                         document.getElementById('fab-profile').classList.toggle('on');
