@@ -121,6 +121,9 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
 
     // Set Motion
     $timeout(function() {

@@ -32,6 +32,7 @@ p {
 
 .menu-open .bar.bar-header.expanded {
     background-color: #222;
+    background: url('../img/nxt.png') center;
 }
 
 .menu h2 {
@@ -65,7 +66,7 @@ p {
 ==================================*/
 .app-icon {
     background-color: #fff;
-    background: url('../img/crown.jpg') center;
+    background: url('../img/nxt.png') center;
     background-size: cover;
     border-radius: 50%;
     height: 125px;
