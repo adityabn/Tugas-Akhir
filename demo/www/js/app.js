@@ -122,19 +122,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-     .state('app.kategori', {
-        url: '/kategori',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/kategori.html',
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
-    })
-    ;
-
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/login');
 });
