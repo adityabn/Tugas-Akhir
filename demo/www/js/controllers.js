@@ -172,7 +172,4 @@ angular.module('starter.controllers', [])
     ionicMaterialMotion.fadeSlideInRight({
         selector: '.animate-fade-slide-in .item'
     });
-
-})
-
-;
+});
