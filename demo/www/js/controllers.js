@@ -95,7 +95,7 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('DjCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -117,10 +117,10 @@ angular.module('starter.controllers', [])
 .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
     $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
+    /*$scope.$parent.clearFabs();*/
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
+    /*$scope.$parent.setHeaderFab(false);*/
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
