@@ -6,7 +6,10 @@ h1 {
     font-size: 42px;
 }
 
-
+h10 {
+    color: #000099;
+    text-shadow: 0 0px 0px #000;
+    font-size: 16px;
 /* Utilities
 ==================================*/
 .title-bordered {
@@ -15,7 +18,7 @@ h1 {
 }
 
 p {
-    color: #555;
+    color: #fff;
     margin: 0 0 25px;
 }
 

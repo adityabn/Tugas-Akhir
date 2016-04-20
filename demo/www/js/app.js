@@ -121,12 +121,12 @@
                 }*/
             }
         })
-        .state('app.popup', {
-            url: '/popu[',
+        .state('app.quisoner', {
+            url: '/quisoner',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/popup.html',
-                    controller: 'PopupCtrl'
+                    templateUrl: 'templates/quisoner.html',
+                    controller: 'ActivityCtrl'
                 },
             }
         })
