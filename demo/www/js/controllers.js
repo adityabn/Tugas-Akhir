@@ -3,7 +3,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($ionicPopup, $scope, $ionicModal, $ionicPopover, $timeout) {
+.controller('AppCtrl', function(User, $ionicPopup, $scope, $ionicModal, $ionicPopover, $timeout) {
     // Form data for the login modal
     $scope.loginData = {};
     $scope.isExpanded = false;
@@ -85,6 +85,33 @@ angular.module('starter.controllers', [])
             fabs[0].remove();
         }
     };
+
+    /////////////////////////API LOGIN ///////////////////////////////////////////////////
+
+ $scope.credentials = {};
+ $scope.login = function() {
+    console.log($scope.credentials);
+    $scope.loginResult = User.login({ rememberMe: $scope.rememberMe },$scope.credentials,
+      function(data) {
+           $scope.rememberMe = data;
+           $scope.userId = data.userId;
+           $location.path("/app/radio");
+        // success
+         console.log(data);
+          
+       // console.log('success',data);
+      }, function(res) {
+        // error
+        console.log('error',res);
+      }).$promise.then(function(){
+
+      //$scope.getuserprofile(); 
+  })
+  };
+
+//////////////////////////////
+
+
 })
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
@@ -116,6 +143,34 @@ angular.module('starter.controllers', [])
 
 .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
+    /*$scope.$parent.clearFabs();*/
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab(false);
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+
+    // Set Motion
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
+
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideInRight({
+            startVelocity: 3000
+        });
+    }, 700);
+
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('RadioCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    // Set Header
+    $scope.Radio = "http://apibeta.svara.id:3000/api/radios/000001?access_token=vJHQLdQ2pDqnU6iI781WGyQ6hi43lyliF2St9w6ZD7gqvaZJyocv50v2IWYURWFk";
     $scope.$parent.showHeader();
     /*$scope.$parent.clearFabs();*/
     $scope.isExpanded = false;
@@ -138,6 +193,62 @@ angular.module('starter.controllers', [])
         });
     }, 700);
 
+    // Triggered on a button click, or some other target
+ $scope.showPopup = function() {
+   $scope.data = {}
+
+   // An elaborate, custom popup
+   var myPopup = $ionicPopup.show({
+     template: '<input type="password" ng-model="data.wifi">',
+     title: 'Enter Wi-Fi Password',
+     subTitle: 'Please use normal things',
+     scope: $scope,
+     buttons: [
+       { text: 'Cancel' },
+       {
+         text: '<b>Save</b>',
+         type: 'button-positive',
+         onTap: function(e) {
+           if (!$scope.data.wifi) {
+             //don't allow the user to close unless he enters wifi password
+             e.preventDefault();
+           } else {
+             return $scope.data.wifi;
+           }
+         }
+       },
+     ]
+   });
+
+   // An elaborate, custom popup
+   var myPopup = $ionicPopup.show({
+     template: '<input type="password" ng-model="data.wifi">',
+     title: 'Enter Wi-Fi Password',
+     subTitle: 'Please use normal things',
+     scope: $scope,
+     buttons: [
+       { text: 'Cancel' },
+       {
+         text: '<b>Save</b>',
+         type: 'button-positive',
+         onTap: function(e) {
+           if (!$scope.data.wifi) {
+             //don't allow the user to close unless he enters wifi password
+             e.preventDefault();
+           } else {
+             return $scope.data.wifi;
+           }
+         }
+       },
+     ]
+   });
+   myPopup.then(function(res) {
+     console.log('Tapped!', res);
+   });
+   $timeout(function() {
+      myPopup.close(); //close the popup after 3 seconds for some reason
+   }, 3000);
+  };
     // Set Ink
     ionicMaterialInk.displayEffect();
 })

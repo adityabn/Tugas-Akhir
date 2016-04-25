@@ -4,15 +4,15 @@
             <div class="content">
                 <div class="app-icon" style="position: fixed;top: 20%;left: 35%"></div>
                 <h1 style="position: fixed;top: 65%;left: 25%">Radio XYZ</h1>
-                <p style="position: fixed;top: 95%;left: 28%">Indonesia Number 1 Hits Music Station</p>
+                <p style="position: fixed;top: 95%;left: 20%">Indonesia Number 1 Hits Music Station</p>
             </div>
          <div class="list" style="position: fixed;top: 110%;left: 15%">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
+            <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="credentials.email"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="credentials.password"></ion-md-input>
         </div>
         </div>
         <div class="padding" style="position: absolute;top: 60%;left: 15%">
-            <button ui-sref="app.rundown" class="button button-full button-positive ink">Mulai</button>
+            <button class="button button-full button-positive ink" ng-click="login()">Mulai</button>
         </div>
         <div class="button-bar social-login">
             <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>

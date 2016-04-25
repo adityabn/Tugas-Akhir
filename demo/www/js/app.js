@@ -4,7 +4,7 @@
     // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
     // the 2nd parameter is an array of 'requires'
     // 'starter.controllers' is found in controllers.js
-    angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput'])
+    angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput','lbServices','ngResource'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -19,6 +19,16 @@
             }
         });
     })
+
+.config(function(LoopBackResourceProvider) {
+ 
+    // Use a custom auth header instead of the default 'Authorization'
+    LoopBackResourceProvider.setAuthHeader('X-Access-Token');
+ 
+    // Change the URL where to access the LoopBack REST API server
+   // LoopBackResourceProvider.setUrlBase('http://192.168.1.12:3000/api');
+  })
+    
 
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -104,12 +114,12 @@
             }
         })
 
-        .state('app.rundown', {
-            url: '/rundown',
+        .state('app.radio', {
+            url: '/radio',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/rundown.html',
-                    controller: 'ProfileCtrl'
+                    templateUrl: 'templates/radio.html',
+                    controller: 'RadioCtrl'
                 },
                 /*'fabContent': {
                     template: '<button id="fab-rundowne" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',

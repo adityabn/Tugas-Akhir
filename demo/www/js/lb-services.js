@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "http://192.168.1.12:3000/explorer";
+var urlBase = "http://apibeta.svara.id:3000/api/";
 var authHeader = 'authorization';
 
 /**
