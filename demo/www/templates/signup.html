@@ -1,0 +1,36 @@
+<ion-view view-title="Sign Up" align-title="left">
+    <ion-content style="background: url(img/bluecov.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon" style="position: fixed;top: 20%;left: 35%"></div>
+                <p style="position: fixed;top: 80%;left: 35%">Silahkan Mendaftar</p>
+            </div>
+
+        <div class="list" style="position: fixed;top: 85%;left: 15%">
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Username</span>
+                <input type="text" placeholder="Username" ng-model="register.username">
+            </label>
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Fullname</span>
+                <input type="text" placeholder="Fullname">
+            </label>
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email" ng-model="register.email">
+            </label>
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Password" ng-model="register.password">
+            </label>
+        </div>
+        </div>
+        <div class="padding" style="position: absolute;top: 80%;left: 10%">
+            <button ui-sref="app.radio" class="button button-small button-positive ink" ng-click="login()">Daftar</button>
+        </div>
+        <div class="button-bar social-login">
+            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+        </div>
+    </ion-content>
+</ion-view>

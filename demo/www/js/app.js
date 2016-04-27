@@ -114,6 +114,32 @@
             }
         })
 
+        .state('app.signup', {
+            url: '/signup',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/signup.html',
+                    controller: 'SignupCtrl'
+                },
+                'fabContent': {
+                    template: ''
+                }
+            }
+        })
+
+        /*.state('app.lauchscreen', {
+            url: '/lauchscreen',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/lauchscreen.html',
+                    controller: 'LauchscreenCtrl'
+                },
+                'fabContent': {
+                    template: ''
+                }
+            }
+        })*/
+
         .state('app.radio', {
             url: '/radio',
             views: {
@@ -137,6 +163,16 @@
                 'menuContent': {
                     templateUrl: 'templates/quisoner.html',
                     controller: 'ActivityCtrl'
+                },
+            }
+        })
+
+        .state('app.programradio', {
+            url: '/programradio',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/programradio.html',
+                    controller: 'ProgamradioCtrl'
                 },
             }
         })

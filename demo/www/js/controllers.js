@@ -16,6 +16,11 @@ angular.module('starter.controllers', [])
             this.classList.toggle('active');
         });
     }
+    //Go Back Function//
+
+    $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  };
 
     ////////////////////////////////////////
     // Layout Methods
@@ -109,6 +114,7 @@ angular.module('starter.controllers', [])
   })
   };
 
+
 //////////////////////////////
 
 
@@ -121,6 +127,40 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
+
+.controller('SignupCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, ionicMaterialMotion) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+    // Set Motion
+    ionicMaterialMotion.fadeSlideInRight();
+})
+
+/*.controller('LauchscreenCtrl', function($scope, $timeout, $stateParams, ionicMaterialMotion, ionicMaterialInk, $location, $ionichistory) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+
+    var num = (Math.floor(Math.random()*3));
+    var array = ['one', 'two','three'];
+    var elem = document.getElementById('main');
+
+        elem.classList.add(array[num]);
+
+
+    $scope.$on('$ionicView.afterEnter', function(){
+    setTimeout(function(){
+
+    document.getElementById("custom-overlay").style.display = "none";
+    $location.path("app/login", "fade");
+
+    }, 2000);
+  });
+})*/
 
 .controller('DjCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
@@ -170,7 +210,6 @@ angular.module('starter.controllers', [])
 
 .controller('RadioCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
-    $scope.Radio = "http://apibeta.svara.id:3000/api/radios/000001?access_token=vJHQLdQ2pDqnU6iI781WGyQ6hi43lyliF2St9w6ZD7gqvaZJyocv50v2IWYURWFk";
     $scope.$parent.showHeader();
     /*$scope.$parent.clearFabs();*/
     $scope.isExpanded = false;
@@ -179,6 +218,13 @@ angular.module('starter.controllers', [])
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
+
+    $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+
+    //call API radio
+     $scope.Radio = "http://apibeta.svara.id:3000/api/radios?access_token=RFp9NRiaNmQ3Md9wjwntSSwnwnqzG8TfLezS2tQ0xFEBc7YdtgnNgodHEP5K77nG";
 
     // Set Motion
     $timeout(function() {
@@ -254,6 +300,53 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ActivityCtrl', function($scope, $ionicPopup, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab('right');
+
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        });
+    }, 200);
+
+    // Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  $timeout(function() {
+     myPopup.close(); //close the popup after 3 seconds for some reason
+  }, 3000);
+ };
+
+ // A confirm dialog
+ $scope.showConfirm = function() {
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Consume Ice Cream',
+     template: 'Are you sure you want to eat this ice cream?'
+   });
+
+   confirmPopup.then(function(res) {
+     if(res) {
+       console.log('You are sure');
+     } else {
+       console.log('You are not sure');
+     }
+   });
+ };
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('ProgamradioCtrl', function($scope, $ionicPopup, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
