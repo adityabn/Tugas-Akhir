@@ -1,4 +1,5 @@
 <ion-view view-title="Login" align-title="left">
+<a class="button icon-left ion-chevron-left button-clear button-light" style= "position:relative; left: -30px;" ui-sref="app.loginscreen";>Back</a>
     <ion-content style="background: url(img/bluecov.jpg) center; background-size: cover;">
         <div class="hero no-header flat">
             <div class="content">
@@ -6,12 +7,20 @@
                 <h1 style="position: fixed;top: 65%;left: 25%">Radio XYZ</h1>
                 <p style="position: fixed;top: 95%;left: 20%">Indonesia Number 1 Hits Music Station</p>
             </div>
-         <div class="list" style="position: fixed;top: 110%;left: 15%">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="credentials.email"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="credentials.password"></ion-md-input>
+         <div class="list" style="position: fixed;top: 110%;left: 20%">
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email" ng-model="credentials.email">
+            </label>
+            <label class="item item-input item-floating-label light">
+                <span class="input-label">Password</span>
+                <input type="text" placeholder="Password" ng-model="credentials.password">
+            </label>
+            <!--<ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="credentials.email"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="credentials.password"></ion-md-input>-->
         </div>
         </div>
-        <div class="padding" style="position: absolute;top: 60%;left: 15%">
+        <div class="padding" style="position: absolute;top: 65%;left: 15%">
             <button ui-sref="app.radio" class="button button-full button-positive ink" ng-click="login()">Mulai</button>
         </div>
         <div class="button-bar social-login">

@@ -95,25 +95,79 @@ span {
     bottom: 0;
 }
 
-/* Setting Thumbnail
-==================================*/
-.thumbnail {
+/* css slider
+===================================*/
+/*-----------------Card - image---- */
+
+
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; } 
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%;height:200px; float: left; }
+div#slider figure { 
   position: relative;
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 15s slidy infinite; 
 }
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+
+@import "compass/css3";
+
+/* Generic Container */
+.container {
+    width: 100%;
 }
-.thumbnail img.portrait {
-  width: 100%;
-  height: auto;
+
+/* Actual Slider Element */
+.slider {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* Slider Direct Child Element */
+.slider li {
+    width: 100%;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Slider First Direct Child */
+.slider li:first-child {
+    display: block;
+}
+
+/* Slider Images, always flex with width of slider */
+.slider li img {
+    width: 100%;
+    height: auto;
+}
+
+#mainbox{
+  font-family: calibri;
+  box-sizing: border-box;
+  justify-content: left;
+  display: flex;
+flex-wrap: wrap;
+margin-left: 0px;
+
 }

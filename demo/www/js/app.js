@@ -83,6 +83,24 @@
             }
         })
 
+        .state('app.djpersonal', {
+            url: '/djpersonal',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/djpersonal.html',
+                    controller: 'DjpersonalCtrl'
+                },
+                /*'fabContent': {
+                    template: '<button id="fab-dj" class="button button-fab button-fab-top-left"><i class="icon ion-ios-arrow-back"></i></button>',
+                    controller: function ($timeout) {
+                        $timeout(function () {
+                            document.getElementById('fab-dj').classList.toggle('on');
+                        }, 900);
+                    }
+                }*/
+            }
+        })
+
         .state('app.gallery', {
             url: '/gallery',
             views: {
@@ -127,18 +145,18 @@
             }
         })
 
-        /*.state('app.lauchscreen', {
-            url: '/lauchscreen',
+        .state('app.loginscreen', {
+            url: '/loginscreen',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/lauchscreen.html',
-                    controller: 'LauchscreenCtrl'
+                    templateUrl: 'templates/loginscreen.html',
+                    controller: 'LoginscreenCtrl'
                 },
                 'fabContent': {
                     template: ''
                 }
             }
-        })*/
+        })
 
         .state('app.radio', {
             url: '/radio',
@@ -178,5 +196,5 @@
         })
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/login');
+        $urlRouterProvider.otherwise('/app/loginscreen');
     });

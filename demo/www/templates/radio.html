@@ -1,6 +1,6 @@
 <ion-view view-title="Profile">
+<a class="button icon-left ion-chevron-left button-clear button-light" style= "position:relative; left: -30px;" ng-click="myGoBack">Back</a>
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-    <a class="button icon-left ion-chevron-left button-clear button-light" style= "position:relative; left: -30px;">Back</a>
         <div class="hero slide-up" style="background-image: url('img/blueback.jpg');">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/nxt.png');"></div>
@@ -24,7 +24,22 @@
             <button class="button button-clear icon-more btn-more" 
              style="right:0px;width: 5px;height: 25px;border-radius:10px;"></button>
         </div>
-        <div class="list animate-fade-slide-in-right">
+        <div class="list">
+        <div class="row">
+            <div id="mainbox" class="col-50" ui-sref="app.program">
+                <div class="card card-gallery item item-text-wrap">
+                    <div class="ink light-bg">
+                        <img ng-src="img/tumb1.jpg">
+                        <a class="item item-text-left item-icon-right" style="border-bottom: solid 1px #FFFFFF;">
+                            <i class="icon ion-android-more-vertical" style="right:0px" ng-click="showActionsheet()"></i>
+                            <h3 style="font-weight: bold; overflow: hidden;text-overflow: ellipsis;white-space: nowrap; ">Inspiring Life</h3>
+                        </a>
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prambors FM Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="list animate-fade-slide-in-right">
             <div class="list">
                 <a class="item item-thumbnail-left" style="height: 100px">
                     <img src="img/tumb1.jpg">
@@ -41,7 +56,7 @@
                     <h2>Pretty Hate Machine</h2>
                     <p>Nine Inch Nails</p>
                 </a>
-            </div>
+            </div>-->
         </div>
     </ion-content>
 </ion-view>

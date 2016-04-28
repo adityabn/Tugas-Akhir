@@ -138,31 +138,34 @@ angular.module('starter.controllers', [])
     ionicMaterialMotion.fadeSlideInRight();
 })
 
-/*.controller('LauchscreenCtrl', function($scope, $timeout, $stateParams, ionicMaterialMotion, ionicMaterialInk, $location, $ionichistory) {
+.controller('LoginscreenCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
     ionicMaterialInk.displayEffect();
-
-    var num = (Math.floor(Math.random()*3));
-    var array = ['one', 'two','three'];
-    var elem = document.getElementById('main');
-
-        elem.classList.add(array[num]);
-
-
-    $scope.$on('$ionicView.afterEnter', function(){
-    setTimeout(function(){
-
-    document.getElementById("custom-overlay").style.display = "none";
-    $location.path("app/login", "fade");
-
-    }, 2000);
-  });
-})*/
+})
 
 .controller('DjCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.$parent.setHeaderFab('left');
+
+    // Delay expansion
+    $timeout(function() {
+        $scope.isExpanded = true;
+        $scope.$parent.setExpanded(true);
+    }, 300);
+
+    // Set Motion
+    ionicMaterialMotion.fadeSlideInRight();
+
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('DjpersonalCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
