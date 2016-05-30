@@ -21,14 +21,14 @@
     })
 
 .config(function(LoopBackResourceProvider) {
- 
+
     // Use a custom auth header instead of the default 'Authorization'
     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
- 
+
     // Change the URL where to access the LoopBack REST API server
    // LoopBackResourceProvider.setUrlBase('http://192.168.1.12:3000/api');
   })
-    
+
 
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -101,12 +101,30 @@
             }
         })
 
-        .state('app.gallery', {
-            url: '/gallery',
+        .state('app.beritaterbaru', {
+            url: '/beritaterbaru',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/gallery.html',
-                    controller: 'GalleryCtrl'
+                    templateUrl: 'templates/berita-terbaru.html',
+                    controller: 'BeritaTerbaruCtrl'
+                },
+                /*'fabContent': {
+                    template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
+                    controller: function ($timeout) {
+                        $timeout(function () {
+                            document.getElementById('fab-gallery').classList.toggle('on');
+                        }, 600);
+                    }
+                }*/
+            }
+        })
+
+        .state('app.beritaterpopuler', {
+            url: '/beritaterpopuler',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/berita-terpopuler.html',
+                    controller: 'BeritaTerpopulerCtrl'
                 },
                 /*'fabContent': {
                     template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',

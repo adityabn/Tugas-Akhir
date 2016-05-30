@@ -15,18 +15,30 @@
             <a ui-sref="app.dj" class="tab-item">
                 <i class="icon ion-android-people"></i> DJ
             </a>
-            <a ui-sref="app.gallery" class="tab-item">
-                <i class="icon ion-images"></i> Photos
+            <a ui-sref="app.beritaterbaru" class="tab-item">
+                <i class="icon ion-images"></i> Berita
             </a>
         </div>
         <div class="item item-button-right kategori" style="padding-bottom:4px;background-color:WhiteSmoke;">
             <h2>Program Radio</h2>
-            <button class="button button-clear icon-more btn-more" 
+            <button class="button button-clear icon-more btn-more"
              style="right:0px;width: 5px;height: 25px;border-radius:10px;"></button>
         </div>
         <div class="list">
         <div class="row">
-            <div id="mainbox" class="col-50" ui-sref="app.program">
+            <div id="mainbox" class="col-50" ui-sref="app.programradio">
+                <div class="card card-gallery item item-text-wrap">
+                    <div class="ink light-bg">
+                        <img ng-src="img/tumb1.jpg">
+                        <a class="item item-text-left item-icon-right" style="border-bottom: solid 1px #FFFFFF;">
+                            <i class="icon ion-android-more-vertical" style="right:0px" ng-click="showActionsheet()"></i>
+                            <h3 style="font-weight: bold; overflow: hidden;text-overflow: ellipsis;white-space: nowrap; ">Inspiring Life</h3>
+                        </a>
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prambors FM Jakarta</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mainbox" class="col-50" ui-sref="app.programradio">
                 <div class="card card-gallery item item-text-wrap">
                     <div class="ink light-bg">
                         <img ng-src="img/tumb1.jpg">

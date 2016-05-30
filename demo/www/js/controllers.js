@@ -103,14 +103,14 @@ angular.module('starter.controllers', [])
            $location.path("/app/radio");
         // success
          console.log(data);
-          
+
        // console.log('success',data);
       }, function(res) {
         // error
         console.log('error',res);
       }).$promise.then(function(){
 
-      //$scope.getuserprofile(); 
+      //$scope.getuserprofile();
   })
   };
 
@@ -396,7 +396,7 @@ $scope.showPopup = function() {
     ionicMaterialInk.displayEffect();
 })
 
-.controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('BeritaTerbaruCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -413,4 +413,20 @@ $scope.showPopup = function() {
         selector: '.animate-fade-slide-in .item'
     });
 })
+.controller('BeritaTerpopulerCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab(false);
 
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+    ionicMaterialMotion.fadeSlideInRight({
+        selector: '.animate-fade-slide-in .item'
+    });
+})
