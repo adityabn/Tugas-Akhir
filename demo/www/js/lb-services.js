@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "http://apibeta.svara.id:3000/api/";
+var urlBase = "http://apibeta.svara.id:3000/api";
 var authHeader = 'authorization';
 
 /**
@@ -755,7 +755,7 @@ module.factory(
          */
         "login": {
           params: {
-            include: "user"
+            include: "account"
           },
           interceptor: {
             response: function(response) {

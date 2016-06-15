@@ -4,7 +4,7 @@
     // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
     // the 2nd parameter is an array of 'requires'
     // 'starter.controllers' is found in controllers.js
-    angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput','lbServices','ngResource'])
+    angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput','lbServices','ngResource', 'ngCordova', 'ngCordova.plugins.media2'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -83,12 +83,12 @@
             }
         })
 
-        .state('app.djpersonal', {
-            url: '/djpersonal',
+        .state('app.music', {
+            url: '/music',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/djpersonal.html',
-                    controller: 'DjpersonalCtrl'
+                    templateUrl: 'templates/music.html',
+                    controller: 'MusicCtrl'
                 },
                 /*'fabContent': {
                     template: '<button id="fab-dj" class="button button-fab button-fab-top-left"><i class="icon ion-ios-arrow-back"></i></button>',
@@ -198,7 +198,7 @@
             views: {
                 'menuContent': {
                     templateUrl: 'templates/quisoner.html',
-                    controller: 'ActivityCtrl'
+                    controller: 'QuisonerCtrl'
                 },
             }
         })

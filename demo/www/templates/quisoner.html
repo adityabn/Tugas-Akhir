@@ -2,34 +2,34 @@
     <ion-content ng-class="{expanded:isExpanded}">
     <div class="animate-fade-slide-in">
     <div class="padding">
-    <h10>Acara</h10>
+    <h10>Penyiar</h10>
     <div class="list" style="border-bottom: solid 1px #BDBDBD;">
         <label class="item item-input item-select">
           <div class="input-label">
             <h3>Pemilihan tema</h3>
           </div>
-        <select>
-            <option selected="">Pilih</option>
-            <option>Bagus</option>
-            <option>Buruk</option>
+          <select ng-model="penyiar.tema" ng-change="showSelectValue(penyiartema)">
+            <option ng-selected="true">Pilih</option>
+            <option penyiar="Bagus">Bagus</option>
+            <option penyiar="Buruk">Buruk</option>
           </select>
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
-            <h3>Kesesuain waktu</h3>
+            <h3>Kesesuaian waktu</h3>
           </div>
-        <select>
-            <option selected="">Pilih</option>
-            <option>Bagus</option>
-            <option>Buruk</option>
+        <select ng-model="penyiar.waktu">
+            <option ng-selected="true">Pilih</option>
+            <option penyiar = "Bagus">Bagus</option>
+            <option penyiar = "Buruk">Buruk</option>
           </select>
         </label>
     </div>
-    <h10>Disc Jockey</h10>
+    <h10>Music</h10>
      <div class="list" style="border-bottom: solid 1px #BDBDBD;">
         <label class="item item-input item-select">
           <div class="input-label">
-            <h3>Penggunaan bahasa</h3>
+            <h3>Pemilihan Tema</h3>
           </div>
         <select>
             <option selected="">Pilih</option>
@@ -39,7 +39,7 @@
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
-            <h3>Interaksi kepada pendengar</h3>
+            <h3>Keseuaian Waktu</h3>
           </div>
         <select>
             <option selected="">Pilih</option>
@@ -48,11 +48,11 @@
           </select>
         </label>
     </div>
-    <h10>Pemilihan Lagu</h10>
+    <h10>Berita</h10>
      <div class="list" style="border-bottom: solid 1px #BDBDBD;">
         <label class="item item-input item-select">
           <div class="input-label">
-            <h3>Kecocokan dengan tema</h3>
+            <h3>Pemilihan Tema</h3>
           </div>
         <select>
             <option selected="">Pilih</option>
@@ -62,7 +62,7 @@
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
-            <h3>Kecocokan dengan waktu</h3>
+            <h3>Kesesuaian Waktu</h3>
           </div>
         <select>
             <option selected="">Pilih</option>
@@ -71,7 +71,7 @@
           </select>
         </label>
     </div>
-    <a class="button icon-left ion-paper-airplane button-positive" ui-sref="app.radio">Simpan</a>
+    <a class="button icon-left ion-paper-airplane button-positive" ng-click = "simpan()">Simpan</a>
     </div>
     </ion-content>
 </ion-view>

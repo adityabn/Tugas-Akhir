@@ -1,59 +1,26 @@
 <ion-view view-title="Activity">
     <ion-content ng-class="{expanded:isExpanded}">
     <div class="animate-fade-slide-in">
-     <div class="list card">
-       <div ui-sref="app.programradio">
-          <div class="item item-avatar item-icon-right">
-              <img src="img/dj/darto.jpg">
-              <h2>Imam Darto</h2>
-              <p><i>Funky Sunshine</i></p>
-              <i class="icon ion-android-more-vertical"></i>
-          </div>
-       </div>
-            <div class="padding">
-                <img src="img/tumb1.jpg">
-                <div class="item item-icon1-left item-icon-right" href="#">
-                  <i class="icon ion-ios-clock-outline">
-                  <p>06.00 - 10.00 WIB</p></i>  
-                </div>
-            </div>
-       </div>
 
-       <div class="list card">
-       <div ui-sref="app.programradio">
-          <div class="item item-avatar item-icon-right">
-              <img src="img/adit.jpg">
-              <h2>Adtya BN</h2>
-              <p><i>Inspiring Life</i></p>
-              <i class="icon ion-android-more-vertical"></i>
-          </div>
-       </div>
-            <div class="padding">
-                <img src="img/tumb3.jpg">
-                <div class="item item-icon1-left item-icon-right" href="#">
-                  <i class="icon ion-ios-clock-outline">
-                  <p>06.00 - 10.00 WIB</p></i>  
-                </div>
-            </div>
-       </div>
+      <ion-list>
+          <ion-item class="item-full" collection-repeat="item in rundown" href="#" style = "padding-top:-10px;padding-bottom:-50px;">
+            <div class="list card">
+              <div class="item">
+                <h2>{{item.content}}</h2>
+              </div>
 
-       <div class="list card">
-       <div ui-sref="app.programradio">
-          <div class="item item-avatar item-icon-right">
-              <img src="img/dj/desta.jpg">
-              <h2>Desta</h2>
-              <p><i>Hit The Beat</i></p>
-              <i class="icon ion-android-more-vertical"></i>
-          </div>
-       </div>
-            <div class="padding">
-                <img src="img/tumb2.jpg">
-                <div class="item item-icon1-left item-icon-right" href="#">
-                  <i class="icon ion-ios-clock-outline">
-                  <p>06.00 - 10.00 WIB</p></i>  
-                </div>
+              <div class="item item-divider">
+                 {{item.type}}
+              </div>
+              <a class="item item-icon-left assertive">
+                <i class="icon ion-ios7-timer"></i>
+                Dimulai {{item.timestamp | date:'medium'}}
+              </a>
             </div>
-       </div>
+          </ion-item>
+        </ion-list>
+
+
     </div>
     </ion-content>
 </ion-view>
